@@ -17,7 +17,7 @@ The core implementation of the model is located in the `model` directory.
 
 Specifically, this project modifies and extends the **Prompt-Tuning** logic by replacing the corresponding files under:
 
-envs/peft/tuner/prompt_tuning/
+peft/tuner/prompt_tuning/
 
 You should overwrite the original files with the customized ones provided in this project.
 
