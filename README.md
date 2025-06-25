@@ -1,14 +1,17 @@
 ## 📊 Data
 
-The primary dataset used in this project is the open-source **Chinese Medical Dialogue Data**. It is publicly available at the following link:
+The primary dataset used in this project is the **Chinese Medical Dialogue Data**, an open-source Chinese medical question-answering dataset available at the following link:
 
 🔗 [https://github.com/Toyhom/Chinese-medical-dialogue-data](https://github.com/Toyhom/Chinese-medical-dialogue-data)
 
-For preprocessing, we extract the `title` field from each sample as the input prompt. This prompt is then fed into the **LLaMA-70B** model, combined with a specialized prompt system tailored for a medical knowledge graph, to generate corresponding **Cypher queries**.
+For data preprocessing, we extract the `title` field from each entry in the dataset and use it as input to a prompt system specifically designed for medical knowledge graphs. Using the **LLaMA-70B** language model, we generate corresponding **Cypher query statements**. These queries are then cleaned and structurally optimized.
 
-The generated Cypher queries undergo cleaning and optimization. After that, we query the medical knowledge graph using each Cypher statement. Only those queries that successfully return meaningful results are retained as valid entries in our final dataset.
+To ensure the quality and utility of the dataset, we query the medical knowledge graph using the generated Cypher statements. Only queries that return valid results are considered effective and retained as part of our dataset.
 
-The resulting training and testing sets are available in the `primary_data` directory.
+The processed training and test sets are stored in the `primary_data` folder.
+
+In addition, four auxiliary datasets used for plotting the loss trend analysis are included in the `auxiliary_data` folder. These datasets support comparison across different configurations or subtasks during training.
+
 
 
 ## 🧠 Model
