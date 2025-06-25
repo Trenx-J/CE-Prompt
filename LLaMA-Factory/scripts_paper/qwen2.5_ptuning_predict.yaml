@@ -1,0 +1,29 @@
+
+### model
+model_name_or_path: /x22221259/jcx/para/qwen2.5-7b
+adapter_name_or_path: /x22221259/jcx/paper_result/train-qwen2.5-7b/ptuning_len32/checkpoint-2460
+trust_remote_code: true
+
+### method
+stage: sft
+do_predict: true
+repetition_penalty: 1.1
+temperature: 0.1
+finetuning_type: ptuning
+
+### dataset
+eval_dataset: vali_data_cypher-title
+template: chatml
+cutoff_len: 3072
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: /x22221259/jcx/paper_result/predict-qwen2.5/ptuning-len32-e6-1.1
+overwrite_output_dir: true
+
+### eval
+per_device_eval_batch_size: 32
+predict_with_generate: true
+ddp_timeout: 180000000
+
